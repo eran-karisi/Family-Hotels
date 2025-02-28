@@ -284,3 +284,90 @@ footer {
 .book-button:hover {
   background: #27ae60;
 }
+/* Add these new styles */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destination-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  text-decoration: none;
+  color: white;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-card h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.location-hero {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.location-hero.loaded {
+  opacity: 1;
+}
+
+.location-hero h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.location-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.location-hero h1 {
+  position: relative;
+  z-index: 1;
+}
+.location-description {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
